@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Donation from "../components/Donation.astro";
+import Partners from "../components/Partners.astro";
+import AboutUs from "../components/AboutUs.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Допомога безпритульним тваринам м. Черкаси та область - фонд «Life. Життя»"
+        description="У вас є можливість врятувати чиєсь життя: взяти котика чи песика з притулку, стати волонтером, допомогти коштами на корм, ліки чи вакцинацію">
+    <Header></Header>
+    <main>
+        <Hero></Hero>
+        <Donation></Donation>
+        <Partners></Partners>
+        <AboutUs></AboutUs>
+        <Footer></Footer>
+	</main>
+</Layout>
+
+<script>
+    window.onscroll = function() {
+        const header = document.querySelector('#header') as HTMLElement;
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+</script>

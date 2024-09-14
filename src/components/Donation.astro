@@ -1,0 +1,50 @@
+---
+import Card from '../components/Card.astro';
+---
+
+<section id="donation" class="section">
+    <div class="wrapper container">
+        <header class="header">
+            <h2>Робити добро легко — стань доброчинцем</h2>
+            <p class="subtitle">Завдяки навіть невеликій сумі, яку ти витрачаєш щодня на дрiбнички, добрих справ стає більше!</p>
+            <span class="note">Звертаємо увагу, що жертвуючи кошти ви погоджуєтесь з нашими&nbsp;</span><a href="/terms-and-conditions.html" data-i18n="homePage.donation.attention.link" innerhtml="умовами та угодами">умовами та угодами</a></p>
+        </header>
+        <div class="grid">
+            <Card imageUrl="images/cards/help-sm.jpg" price="50 грн" text="Нагодують 1 собаку/2 кота" appearance="yellow"/>
+            <Card imageUrl="images/cards/help-md.jpg" price="100 грн" text="Нагодують 2 собаки/4 кота" appearance="blue"/>
+            <Card imageUrl="images/cards/help-lg.jpg" price="200 грн" text="Нагодують 4 собаки/8 котів" appearance="purple"/>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    @media (max-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .header {
+      .subtitle {
+        margin-top: 16px;
+        font-size: 24px;
+        line-height: 1.5;
+      }
+
+      .note {
+        margin-top: 16px;
+      }
+    }
+
+    .grid {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      column-gap: 20px;
+      row-gap: 40px;
+    }
+  }
+</style>

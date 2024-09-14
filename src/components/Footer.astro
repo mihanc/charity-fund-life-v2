@@ -1,0 +1,28 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer id="footer" class="footer">
+    <div class="wrapper container">
+        <p>Благодійний фонд “Життя” | Всі права захищені</p>
+        <p>Andersen {year}</p>
+    </div>
+</footer>
+<style lang="scss">
+    .footer {
+      background-image: radial-gradient(var(--gradient-yellow));
+
+      .wrapper {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 60px;
+
+        @media (max-width: 768px) {
+          padding-bottom: 30px;
+        }
+      }
+    }
+</style>

@@ -1,0 +1,176 @@
+<header id="header" class="header">
+    <div class="wrapper container">
+        <div class="logo">
+            <a href="/public">
+                <img src="images/logo.svg">
+            </a>
+        </div>
+        <ul class="menu">
+            <li><a href="#hero">Головна</a></li>
+            <li><a href="#donation">Допомогти</a></li>
+            <li><a href="#partners">Партнери</a></li>
+            <li><a href="#about-us">Про нас</a></li>
+            <li><a href="#contacts">Контакти</a></li>
+        </ul>
+        <div class="burger"><span></span><span></span><span></span><span></span></div>
+        <ul class="mobile-menu">
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#hero"
+            >Головна</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#donation"
+            >Допомогти</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#partners"
+            >Партнери</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#about-us"
+            >Про нас</a></li>
+            <li class="mobile-menu-item"><a class="mobile-menu-link" href="#contacts"
+            >Контакти</a></li>
+        </ul>
+    </div>
+</header>
+
+<style lang="scss">
+  .header {
+    filter: drop-shadow(0px 0px 35px rgba(51, 63, 96, 0.28));
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 3;
+
+    &.scrolled {
+      background-color: var(--white);
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+  }
+
+  .logo {
+    max-width: 190px;
+
+    .img {
+      width: 100%;
+    }
+  }
+
+  .menu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-column-gap: 40px;
+    margin-left: auto;
+    margin-right: 100px;
+
+    @media (max-width: 1024px) {
+      display: none;
+    }
+
+    li {
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      a {
+        position: relative;
+        text-decoration: none;
+        color: var(--black);
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 1.5;
+
+        &::before {
+          content: '';
+          height: 4px;
+          width: 1%;
+          background: var(--black);
+          opacity: 0;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+        }
+
+        &:hover::before, &:focus::before {
+          opacity: .85;
+          width: 100%;
+          left: 0;
+          transition: all 0.3s ease;
+        }
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    width: 35px;
+    height: 26px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    @media (max-width: 1024px) {
+      display: block;
+    }
+
+    span {
+      display: block;
+      position: absolute;
+      height: 5px;
+      width: 100%;
+      background: var(--black);
+      border-radius: 9px;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) {
+        top: 0;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        top: 10px;
+      }
+
+      &:nth-child(4) {
+        top: 20px;
+      }
+    }
+  }
+
+  .mobile-menu {
+    display: none;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    padding: 30px;
+    border-top: 1px solid;
+    flex-direction: column;
+    gap: 16px;
+
+    &-opened {
+      display: flex;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: var(--color-black);
+    }
+  }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const hamburger = document.querySelector('.burger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('mobile-menu-opened');
+        });
+    });
+</script>

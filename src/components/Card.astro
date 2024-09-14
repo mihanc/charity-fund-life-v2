@@ -1,0 +1,58 @@
+---
+const {imageUrl, price, text, appearance} = Astro.props;
+---
+
+<article
+        class:list={[{yellow: appearance === 'yellow'}, {blue: appearance === 'blue'}, {purple: appearance === 'purple'}, "card"]}>
+    <div class="card-image-wrapper"><img class="card__image" src={imageUrl} alt="small help"></div>
+    <div class="card-body">
+        <div class="card-title">{price}</div>
+        <div class="card-subtitle">{text}</div>
+        <a class="card-button button" href="https://send.monobank.ua/jar/ANaUjSWksD" target="_blank">Допомогти</a>
+    </div>
+</article>
+
+<style lang="scss">
+  .card {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+
+    &.yellow {
+      background: radial-gradient(126.46% 88.89% at 57.37% 72.92%, #FFBB56 0%, #FFDBA5 100%);
+    }
+
+    &.blue {
+      background: radial-gradient(135.97% 93.5% at 4.98% 0%, #B4D1FF 0%, #6DA2F9 100%);
+    }
+
+    &.purple {
+      background: radial-gradient(164.24% 102.12% at 52.49% 76.04%, #9E72F2 0%, #D7C2FF 100%);
+    }
+
+    &-image-wrapper {
+      height: 246px;
+      overflow: hidden;
+    }
+
+    &-body {
+      padding: 20px 40px 40px;
+    }
+
+    &-title {
+      font-size: 40px;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+
+    &-subtitle {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    &-button {
+      margin-top: 24px;
+      width: 100%;
+    }
+  }
+</style>

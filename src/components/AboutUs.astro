@@ -1,0 +1,149 @@
+---
+import Contacts from "./Contacts.astro";
+---
+<section id="about-us" class="section">
+    <div class="wrapper container">
+        <h2>Благодійний фонд “Життя”</h2>
+        <div class="grid">
+            <div class="row">
+                <div class="column">
+                    <p>З 2017 року наш фонд допомагає вуличним тваринам, які потрапили у біду – залишились
+                        безпритульними, потребують медичного втручання або простої людської теплоти. Ми їх годуємо,
+                        лікуємо, обігріваємо та знаходимо новий дім.</p>
+                    <p>Місія Черкаського обласного благодійного фонду «ЖИТТЯ» - це захист найвищої цінності у світі –
+                        ЖИТТЯ!</p>
+                    <p>ЩОДНЯ у нас з’являється щонайменше одна нова вулична тварина, яка потребує допомоги.</p>
+                    <p>ЩОМІСЯЦЯ ми знаходимо нову домівку більш ніж 20 підопічним тваринкам.</p>
+                    <p>Ваша допомога фонду – це можливість для безпритульних тварин, котиків та собачок, бути
+                        нагодованими та здоровими.</p>
+                    <p>Ваша допомога - це шанс для тваринок на нове життя!</p>
+                </div>
+                <div class="column slider">
+                    <div class="slider-items">
+                        <div class="slider-item slider-item-prev"><img class="slider-image"
+                                                                       src="../images/documents/document3.jpg"><a
+                                class="slider-link" href="pdf/document3.pdf" target="_blank"></a></div>
+                        <div class="slider-item slider-item-current"><img class="slider-image"
+                                                                          src="../images/documents/document1.jpg"><a
+                                class="slider-link" href="pdf/document1.pdf" target="_blank"></a></div>
+                        <div class="slider-item slider-item-next"><img class="slider-image"
+                                                                       src="../images/documents/document2.jpg"><a
+                                class="slider-link" href="pdf/document2.pdf" target="_blank"></a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="contacts" class="row">
+                <Contacts/>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+  .slider-items {
+    display: flex;
+    justify-content: center;
+    max-width: 560px;
+    position: relative;
+    margin: 0 auto;
+
+    .slider-item {
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s linear;
+      border-radius: 8px;
+      overflow: hidden;
+
+      &-next {
+        position: absolute;
+        z-index: 1;
+        right: -60px;
+        transform: scale(0.8);
+        filter: blur(5px) brightness(0.8);
+
+        @media (max-width: 768px) {
+          right: -4px;
+        }
+      }
+
+      &-prev {
+        position: absolute;
+        z-index: 1;
+        left: 100px;
+        transform: translateX(-50%) scale(0.8);
+        filter: blur(7px) brightness(0.8);
+      }
+    }
+
+    .slider-image {
+      width: 345px;
+      height: 468px;
+
+      @media (max-width: 768px) {
+        width: 180px;
+        height: 250px;
+      }
+    }
+
+    .slider-link {
+      display: none;
+      text-decoration: none;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    }
+  }
+
+  .section {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: radial-gradient(var(--gradient-yellow));
+
+    @media (max-width: 768px) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .grid {
+      margin-top: 60px;
+
+      @media (max-width: 768px) {
+        margin-top: 25px;
+      }
+
+      .row {
+        display: flex;
+        column-gap: 20px;
+        row-gap: 40px;
+
+        @media (max-width: 768px) {
+          flex-direction: column;
+        }
+
+        .column {
+          flex: 1 0;
+
+          p {
+            font-size: 24px;
+            line-height: 36px;
+
+            @media (max-width: 768px) {
+              font-size: 18px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
+
+<script>
+    import {initSlider} from "../utils/slider";
+
+    document.addEventListener('DOMContentLoaded', function () {
+        initSlider();
+    });
+</script>

@@ -1,0 +1,51 @@
+<div class="contacts">
+    <h3>Контакти</h3>
+    <ul class="contacts-list">
+        <li class="contact-item">
+            <img class="contact-image" src="../images/icons/phone.svg">
+            <a class="contact-link" href="tel:+380984828979">+380984828979</a>
+        </li>
+        <li class="contact-item">
+            <img class="contact-image" src="../images/icons/facebook.svg">
+            <a class="contact-link" href="https://www.facebook.com/CharityFundLife/" target="_blank" data-i18n="homePage.contacts.facebook">Ми в Facebook</a>
+        </li>
+        <li class="contact-item">
+            <img class="contact-image" src="../images/icons/instagram.svg">
+            <a class="contact-link" href="https://www.instagram.com/charityfundlife/" target="_blank" data-i18n="homePage.contacts.instagram">Ми в Instagram</a>
+        </li>
+    </ul>
+</div>
+
+<style lang="scss">
+  .contacts-list {
+    display: flex;
+    margin-top: 40px;
+    gap: 60px;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      line-height: 36px;
+    }
+
+    .contact-image {
+      width: 28px;
+      height: 28px;
+    }
+
+    .contact-link {
+      color: var(--black);
+      vertical-align: middle;
+      margin-left: 8px;
+      text-decoration: none;
+      border-bottom: 1px dashed;
+    }
+  }
+</style>

@@ -1,0 +1,73 @@
+<section id="hero" class="section">
+    <div class="wrapper container">
+        <div class="head">
+            <h1>Допомагати тваринам - це круто. Долучайся</h1>
+            <p>10 000 людей вже допомагають</p>
+            <a class="button" href="#donation">Допомогти</a>
+        </div>
+    </div>
+</section>
+
+<style lang="scss">
+  .section {
+    padding-top: 116px;
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    position: relative;
+
+    @media (max-width: 768px) {
+      padding-top: 260px;
+      padding-bottom: 260px;
+      background-image: url("../images/hero-mobile.png");
+    }
+
+
+    .wrapper {
+      position: relative;
+      padding: 230px 30px 430px 30px;
+
+      @media (max-width: 768px) {
+        position: absolute;
+        padding: 20px 16px;
+        background-color: var(--yellow);
+        transform: translateY(100%);
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+
+      .head {
+        max-width: 700px;
+
+        h1 {
+          font-size: 60px;
+          line-height: 1.25;
+          font-weight: 600;
+
+          @media (max-width: 768px) {
+            font-size: 30px;
+          }
+        }
+
+        p {
+          margin-top: 20px;
+          font-size: 24px;
+          line-height: 1.5;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+          }
+        }
+
+        a {
+          margin-top: 40px;
+
+          @media (max-width: 768px) {
+            font-size: 16px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+</style>
